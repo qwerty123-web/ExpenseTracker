@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <h1>Expense Tracker</h1>
+        <p>Track income, expenses, and remaining balance.</p>
+      </div>
+      <div class="balance-card">
+        <p>Balance</p>
+        <h2 id="balanceAmount">$0.00</h2>
+      </div>
+    </header>
+
+    <section class="summary-grid">
+      <article class="summary-card income-card">
+        <h3>Income</h3>
+        <p id="incomeAmount">$0.00</p>
+      </article>
+      <article class="summary-card expense-card">
+        <h3>Expenses</h3>
+        <p id="expenseAmount">$0.00</p>
+      </article>
+    </section>
+
+    <section class="form-panel">
+      <form id="expenseForm" class="expense-form">
+        <div class="form-row">
+          <label for="typeInput">Type</label>
+          <select id="typeInput" required>
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="descriptionInput">Description</label>
+          <input id="descriptionInput" type="text" placeholder="e.g. groceries" required />
+        </div>
+        <div class="form-row">
+          <label for="amountInput">Amount</label>
+          <input id="amountInput" type="number" step="0.01" min="0.01" placeholder="0.00" required />
+        </div>
+        <button type="submit" class="primary-button">Add Transaction</button>
+      </form>
+    </section>
+
+    <section class="transactions-panel">
+      <div class="transactions-header">
+        <h2>Transactions</h2>
+        <button id="clearButton" class="secondary-button">Clear All</button>
+      </div>
+      <ul id="transactionList" class="transaction-list"></ul>
+      <p class="hint">Your latest transactions will appear here.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
